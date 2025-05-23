@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages | HealthTrack Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-hospital-alt" style="font-size: 1.5rem; margin-right: 10px;"></i>
+                <h2>HealthTrack Pro</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="doctor-dashboard.html"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+                <li><a href="appointments.html"><i class="fas fa-calendar-alt"></i> <span>Appointments</span></a></li>
+                <li><a href="patients.html"><i class="fas fa-users"></i> <span>Patients</span></a></li>
+                <li><a href="medical-records.html"><i class="fas fa-file-medical"></i> <span>Medical Records</span></a></li>
+                <li><a href="reminders.html"><i class="fas fa-bell"></i> <span>Reminders</span></a></li>
+                <li><a href="messages.html" class="active"><i class="fas fa-envelope"></i> <span>Messages</span></a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+            </ul>
+        </aside>
+        
+        <main class="main-content">
+            <div class="header">
+                <h1>Messages</h1>
+                <div class="user-profile">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Smith">
+                    <span>Dr. John Smith</span>
+                </div>
+            </div>
+            
+            <div class="messages-container">
+                <div class="conversation-list">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search messages..." id="message-search">
+                        <button class="btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <div class="conversation active">
+                        <div class="conversation-avatar">RW</div>
+                        <div class="conversation-info">
+                            <h3>Robert Wilson</h3>
+                            <p>Just confirming my appointment for tomorrow...</p>
+                            <span class="conversation-time">Today, 9:15 AM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="conversation">
+                        <div class="conversation-avatar">SJ</div>
+                        <div class="conversation-info">
+                            <h3>Sarah Johnson</h3>
+                            <p>About the medication you prescribed...</p>
+                            <span class="conversation-time">Yesterday, 2:30 PM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="conversation unread">
+                        <div class="conversation-avatar">MB</div>
+                        <div class="conversation-info">
+                            <h3>Michael Brown</h3>
+                            <p>I have some questions about my test results</p>
+                            <span class="conversation-time">June 1, 10:45 AM</span>
+                            <span class="unread-badge">3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="message-view">
+                    <div class="message-header">
+                        <div class="message-recipient">
+                            <div class="recipient-avatar">RW</div>
+                            <h3>Robert Wilson</h3>
+                        </div>
+                        <button class="btn btn-outline"><i class="fas fa-phone"></i> Call Patient</button>
+                    </div>
+                    
+                    <div class="message-history">
+                        <div class="message received">
+                            <div class="message-content">
+                                <p>Hi Dr. Smith, just confirming my appointment for tomorrow at 9 AM. Do I need to bring anything special?</p>
+                                <span class="message-time">Today, 9:15 AM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="message sent">
+                            <div class="message-content">
+                                <p>Hello Robert, no need to bring anything special. Just your insurance card if you haven't already provided it. See you tomorrow!</p>
+                                <span class="message-time">Today, 9:30 AM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="message received">
+                            <div class="message-content">
+                                <p>Great, thank you! Also, should I continue taking my medications as usual before the appointment?</p>
+                                <span class="message-time">Today, 9:32 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="message-compose">
+                        <textarea placeholder="Type your message here..."></textarea>
+                        <div class="compose-actions">
+                            <button class="btn btn-outline"><i class="fas fa-paperclip"></i></button>
+                            <button class="btn">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="auth.js"></script>
+    <script src="messages.js"></script>
+</body>
+</html>

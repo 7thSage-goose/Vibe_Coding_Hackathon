@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard | HealthTrack Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-hospital-alt" style="font-size: 1.5rem; margin-right: 10px;"></i>
+                <h2>HealthTrack Pro</h2>
+            </div>
+           <ul class="sidebar-menu">
+    <li><a href="doctor-dashboard.html" class="active"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+    <li><a href="appointments.html"><i class="fas fa-calendar-alt"></i> <span>Appointments</span></a></li>
+    <li><a href="patients.html"><i class="fas fa-users"></i> <span>Patients</span></a></li>
+    <li><a href="medical-records.html"><i class="fas fa-file-medical"></i> <span>Medical Records</span></a></li>
+    <li><a href="reminders.html"><i class="fas fa-bell"></i> <span>Reminders</span></a></li>
+    <li><a href="messages.html"><i class="fas fa-envelope"></i> <span>Messages</span></a></li>
+    <li><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+    <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+</ul>
+        </aside>
+        
+        <main class="main-content">
+            <div class="header">
+                <h1>Welcome Back, Dr. Smith</h1>
+                <div class="user-profile">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Smith">
+                    <span>Dr. John Smith</span>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card fade-in">
+                    <h3>Today's Appointments</h3>
+                    <div class="value">12</div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>2 more than yesterday</span>
+                    </div>
+                </div>
+                <div class="stat-card fade-in" style="animation-delay: 0.1s;">
+                    <h3>Pending Follow-ups</h3>
+                    <div class="value">8</div>
+                    <div class="trend down">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>3 less than last week</span>
+                    </div>
+                </div>
+                <div class="stat-card fade-in" style="animation-delay: 0.2s;">
+                    <h3>High Priority Patients</h3>
+                    <div class="value">5</div>
+                    <div class="trend">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>No change</span>
+                    </div>
+                </div>
+                <div class="stat-card fade-in" style="animation-delay: 0.3s;">
+                    <h3>Messages</h3>
+                    <div class="value">3</div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>New messages</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section slide-in-right">
+                <div class="section-header">
+                    <h2>Today's Schedule</h2>
+                    <div>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+                </div>
+                <div class="calendar">
+                    <div class="calendar-header">Sun</div>
+                    <div class="calendar-header">Mon</div>
+                    <div class="calendar-header">Tue</div>
+                    <div class="calendar-header">Wed</div>
+                    <div class="calendar-header">Thu</div>
+                    <div class="calendar-header">Fri</div>
+                    <div class="calendar-header">Sat</div>
+                    
+                    <div class="calendar-day">28</div>
+                    <div class="calendar-day">29</div>
+                    <div class="calendar-day">30</div>
+                    <div class="calendar-day">31</div>
+                    <div class="calendar-day today has-appointments">1
+                        <div class="appointment-item"><span class="appointment-dot"></span>9:00 AM - Sarah Johnson</div>
+                        <div class="appointment-item"><span class="appointment-dot"></span>11:30 AM - Michael Brown</div>
+                        <div class="appointment-item"><span class="appointment-dot"></span>3:00 PM - Emily Davis</div>
+                    </div>
+                    <div class="calendar-day">2</div>
+                    <div class="calendar-day">3</div>
+                </div>
+            </div>
+            
+            <div class="section slide-in-right" style="animation-delay: 0.1s;">
+                <div class="section-header">
+                    <h2>Upcoming Appointments</h2>
+                    <div>
+                        <a href="#" class="btn">Create New</a>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient</th>
+                            <th>Date & Time</th>
+                            <th>Purpose</th>
+                            <th>Priority</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="priority-high">
+                            <td>Robert Wilson</td>
+                            <td>Today, 9:00 AM</td>
+                            <td>Post-surgery checkup</td>
+                            <td><span class="badge badge-danger">High</span></td>
+                            <td>
+                                <button class="btn btn-outline">Details</button>
+                            </td>
+                        </tr>
+                        <tr class="priority-medium">
+                            <td>Sarah Johnson</td>
+                            <td>Today, 11:30 AM</td>
+                            <td>Medication review</td>
+                            <td><span class="badge badge-warning">Medium</span></td>
+                            <td>
+                                <button class="btn btn-outline">Details</button>
+                            </td>
+                        </tr>
+                        <tr class="priority-low">
+                            <td>Michael Brown</td>
+                            <td>Today, 3:00 PM</td>
+                            <td>Annual physical</td>
+                            <td><span class="badge badge-success">Low</span></td>
+                            <td>
+                                <button class="btn btn-outline">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Emily Davis</td>
+                            <td>Tomorrow, 10:15 AM</td>
+                            <td>Test results</td>
+                            <td><span class="badge badge-primary">Normal</span></td>
+                            <td>
+                                <button class="btn btn-outline">Details</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section slide-in-right" style="animation-delay: 0.2s;">
+                <div class="section-header">
+                    <h2>Priority Patients</h2>
+                    <div>
+                        <a href="#" class="btn">View All Patients</a>
+                    </div>
+                </div>
+                <div class="patient-card">
+                    <div class="patient-avatar">RW</div>
+                    <div class="patient-info">
+                        <h3>Robert Wilson</h3>
+                        <p>Last visit: 2 days ago | Next appointment: Today</p>
+                    </div>
+                    <div class="patient-actions">
+                        <div class="action-btn" title="Send Reminder">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="action-btn" title="View Records">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <div class="action-btn" title="Message Patient">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="patient-card">
+                    <div class="patient-avatar">SJ</div>
+                    <div class="patient-info">
+                        <h3>Sarah Johnson</h3>
+                        <p>Last visit: 1 week ago | Next appointment: Today</p>
+                    </div>
+                    <div class="patient-actions">
+                        <div class="action-btn" title="Send Reminder">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="action-btn" title="View Records">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <div class="action-btn" title="Message Patient">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="auth.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
