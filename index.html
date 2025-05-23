@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthTrack Pro | Smart Patient Follow-Up System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🏥</span>
+            <span>HealthTrack Pro</span>
+        </div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#" id="login-btn" class="btn">Doctor Login</a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Never Miss a Patient Follow-Up Again</h1>
+            <p>Automated appointment reminders, patient prioritization, and seamless communication for healthcare professionals.</p>
+            <a href="#" id="hero-login-btn" class="btn">Secure Doctor Portal</a>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⏰</div>
+                <h3>Automated Reminders</h3>
+                <p>Send SMS, WhatsApp, and email reminders to both doctors and patients 24 hours before appointments.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Patient Prioritization</h3>
+                <p>Smart system that organizes patients by urgency and follow-up needs.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure Records</h3>
+                <p>HIPAA-compliant patient record storage with instant access during appointments.</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="login-modal" id="login-modal">
+        <span class="close-modal">&times;</span>
+        <div class="login-container">
+            <h2>Doctor Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Professional Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="license">Medical License Number</label>
+                    <input type="text" id="license" required>
+                </div>
+                <button type="submit" class="btn">Verify & Login</button>
+            </form>
+        </div>
+    </div>
+    
+    <footer id="contact">
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Support</a>
+        </div>
+        <p>© 2023 HealthTrack Pro. All rights reserved.</p>
+    </footer>
+    
+    <script src="auth.js"></script>
+    <script src="main.js"></script>
+document.addEventListener('DOMContentLoaded', function() {
+    // If user is already logged in, redirect to dashboard
+    if (localStorage.getItem('doctorLoggedIn')) {
+        window.location.href = 'doctor-dashboard.html';
+    }});
+    
+
+</body>
+</html>
