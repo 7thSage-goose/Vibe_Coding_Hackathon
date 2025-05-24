@@ -66,3 +66,48 @@ function sendMessage(patient, message) {
   });
   renderMessages();
 }
+
+class SecureChat {
+    constructor() {
+        this.socket = new WebSocket('wss://your-server/chat');
+    }
+
+    initializeChat(doctorId, patientId) {
+        // ...setup secure channel
+    }
+
+    sendMessage(message, attachments) {
+        // ...encrypt and send message
+    }
+}
+
+const chat = new SecureChat();
+
+document.getElementById('chat-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const messageInput = document.getElementById('message-input');
+    const attachmentInput = document.getElementById('attachment-input');
+    
+    await chat.sendMessage(
+        messageInput.value, 
+        attachmentInput.files[0]
+    );
+    
+    messageInput.value = '';
+    attachmentInput.value = '';
+});
+
+// Listen for incoming messages
+chat.socket.addEventListener('message', (event) => {
+    const message = JSON.parse(event.data);
+    appendMessage(message);
+});
+
+function appendMessage(message) {
+    const messagesArea = document.getElementById('chat-messages');
+    const messageElement = document.createElement('div');
+    messageElement.className = `message ${message.sender === 'doctor' ? 'sent' : 'received'}`;
+    messageElement.textContent = message.content;
+    messagesArea.appendChild(messageElement);
+    messagesArea.scrollTop = messagesArea.scrollHeight;
+}

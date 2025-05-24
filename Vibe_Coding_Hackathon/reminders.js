@@ -36,3 +36,17 @@ if (!localStorage.getItem('doctorLoggedIn')) {
     window.location.href = 'index.html';
     return;
 }
+
+class AppointmentReminder {
+    constructor() {
+        this.reminderTypes = ['email', 'sms', 'push'];
+    }
+
+    scheduleReminder(appointmentId, type, timeBeforeAppointment) {
+        // ...schedule reminder logic
+    }
+
+    async sendReminder(patientId, message, type) {
+        // ...notification sending logic
+    }
+}

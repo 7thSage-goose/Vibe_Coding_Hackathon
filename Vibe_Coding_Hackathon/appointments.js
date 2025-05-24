@@ -116,3 +116,15 @@ function addAppointment(patient, date, time, purpose) {
   appointments.push(newAppt);
   renderAppointments();
 }
+
+const reminderSystem = new AppointmentReminder();
+
+document.getElementById('appointment-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    // ...existing appointment creation code...
+
+    // Schedule reminders
+    const appointmentId = /* newly created appointment ID */;
+    reminderSystem.scheduleReminder(appointmentId, 'email', 24); // 24 hours before
+    reminderSystem.scheduleReminder(appointmentId, 'sms', 2); // 2 hours before
+});

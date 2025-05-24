@@ -44,9 +44,20 @@
                     </div>
                 </div>
                 
-                <div class="search-bar">
-                    <input type="text" placeholder="Search records..." id="record-search">
-                    <button class="btn"><i class="fas fa-search"></i></button>
+                <div class="search-container">
+                    <form id="records-search-form">
+                        <input type="text" id="patient-name" placeholder="Patient Name">
+                        <input type="date" id="date-from">
+                        <input type="date" id="date-to">
+                        <select id="record-type">
+                            <option value="">All Records</option>
+                            <option value="consultation">Consultations</option>
+                            <option value="lab">Lab Results</option>
+                            <option value="prescription">Prescriptions</option>
+                        </select>
+                        <button type="submit">Search Records</button>
+                    </form>
+                    <div id="search-results"></div>
                 </div>
                 
                 <div class="records-grid">

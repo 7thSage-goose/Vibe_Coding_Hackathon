@@ -50,9 +50,9 @@
         </div>
     </section>
     
-    <div class="login-modal" id="login-modal">
-        <span class="close-modal">&times;</span>
-        <div class="login-container">
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
             <h2>Doctor Login</h2>
             <form id="login-form">
                 <div class="form-group">
@@ -65,9 +65,9 @@
                 </div>
                 <div class="form-group">
                     <label for="license">Medical License Number</label>
-                    <input type="text" id="license" required>
+                    <input type="text" id="license" placeholder="e.g., MED12345678" required>
                 </div>
-                <button type="submit" class="btn">Verify & Login</button>
+                <button type="submit" class="btn btn-primary">Verify & Login</button>
             </form>
         </div>
     </div>

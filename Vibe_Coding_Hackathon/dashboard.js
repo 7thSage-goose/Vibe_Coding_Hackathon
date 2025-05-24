@@ -55,3 +55,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+class AnalyticsDashboard {
+    generateMetrics() {
+        return {
+            appointmentsToday: this.countTodayAppointments(),
+            patientLoad: this.calculatePatientLoad(),
+            averageWaitTime: this.calculateWaitTime()
+        };
+    }
+}
+
+const analytics = new AnalyticsDashboard();
+
+async function updateDashboardMetrics() {
+    const metrics = await analytics.generateMetrics();
+    
+    document.getElementById('appointments-today').textContent = metrics.appointmentsToday;
+    document.getElementById('patient-load').textContent = metrics.patientLoad;
+    document.getElementById('avg-wait-time').textContent = `${metrics.averageWaitTime} min`;
+}
+
+// Update metrics every 5 minutes
+setInterval(updateDashboardMetrics, 300000);
+// Initial update
+updateDashboardMetrics();
+
