@@ -41,34 +41,46 @@
                     <h2>Schedule New Appointment</h2>
                     <button class="btn" id="new-appointment-btn">+ New Appointment</button>
                 </div>
-                <form id="appointment-form" style="display: none;">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="patient-select">Patient</label>
-                            <select id="patient-select" class="form-control">
-                                <option value="">Select a patient</option>
-                                <option value="1">Robert Wilson</option>
-                                <option value="2">Sarah Johnson</option>
-                                <option value="3">Michael Brown</option>
-                            </select>
+                <div class="appointment-form-container section-content">
+                    <form id="appointment-form" class="form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="patientName">Patient Name</label>
+                                <input type="text" id="patientName" name="patientName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="patientPhone">Patient Phone Number</label>
+                                <input type="tel" id="patientPhone" name="patientPhone" class="form-control" placeholder="+1234567890" required 
+                                       pattern="^\+?[1-9]\d{1,14}$">
+                                <small>Format: +1234567890 (Include country code)</small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="appointmentDate">Date</label>
+                                <input type="date" id="appointmentDate" name="appointmentDate" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointmentTime">Time</label>
+                                <input type="time" id="appointmentTime" name="appointmentTime" class="form-control" required>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="appointment-date">Date</label>
-                            <input type="date" id="appointment-date" class="form-control">
+                            <label for="purpose">Purpose</label>
+                            <input type="text" id="purpose" name="purpose" class="form-control" required>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="appointment-time">Time</label>
-                            <input type="time" id="appointment-time" class="form-control">
+                        <div class="form-group reminder-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="enableReminder" name="enableReminder" checked>
+                                <span class="checkbox-text">Enable SMS Reminder (24 hours before)</span>
+                            </label>
                         </div>
-                        <div class="form-group">
-                            <label for="appointment-purpose">Purpose</label>
-                            <input type="text" id="appointment-purpose" class="form-control" placeholder="Checkup, follow-up, etc.">
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Schedule Appointment</button>
+                            <button type="button" class="btn btn-outline" id="cancel-appointment-btn">Cancel</button>
                         </div>
-                    </div>
-                    <button type="submit" class="btn">Schedule Appointment</button>
-                </form>
+                    </form>
+                </div>
             </div>
             
             <div class="section">
@@ -77,6 +89,20 @@
                     <div class="view-options">
                         <button class="btn btn-outline active" data-view="list">List View</button>
                         <button class="btn btn-outline" data-view="calendar">Calendar View</button>
+                    </div>
+                </div>
+                
+                <div class="appointment-filters">
+                    <div class="search-container">
+                        <input type="text" id="appointment-search" placeholder="Search appointments..." class="search-input">
+                    </div>
+                    <div class="filter-container">
+                        <select id="status-filter" class="filter-select">
+                            <option value="all">All Status</option>
+                            <option value="scheduled">Scheduled</option>
+                            <option value="reminded">Reminded</option>
+                        </select>
+                        <button id="today-filter" class="btn btn-outline btn-sm">Today's Appointments</button>
                     </div>
                 </div>
                 
@@ -92,45 +118,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Robert Wilson</td>
-                                <td>Today, 9:00 AM</td>
-                                <td>Post-surgery checkup</td>
-                                <td><span class="badge badge-primary">Confirmed</span></td>
-                                <td>
-                                    <button class="btn btn-outline btn-sm">Details</button>
-                                    <button class="btn btn-outline btn-sm">Cancel</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sarah Johnson</td>
-                                <td>Tomorrow, 11:30 AM</td>
-                                <td>Medication review</td>
-                                <td><span class="badge badge-primary">Confirmed</span></td>
-                                <td>
-                                    <button class="btn btn-outline btn-sm">Details</button>
-                                    <button class="btn btn-outline btn-sm">Cancel</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Michael Brown</td>
-                                <td>June 15, 3:00 PM</td>
-                                <td>Annual physical</td>
-                                <td><span class="badge badge-warning">Pending</span></td>
-                                <td>
-                                    <button class="btn btn-outline btn-sm">Details</button>
-                                    <button class="btn btn-outline btn-sm">Confirm</button>
-                                </td>
-                            </tr>
+                            <!-- Appointments will be dynamically inserted here -->
                         </tbody>
                     </table>
                 </div>
                 
                 <div id="appointments-calendar" style="display: none;">
                     <div class="calendar-header">
-                        <button id="prev-month" class="btn btn-outline"><i class="fas fa-chevron-left"></i></button>
-                        <h3 id="current-month">June 2023</h3>
-                        <button id="next-month" class="btn btn-outline"><i class="fas fa-chevron-right"></i></button>
+                        <div class="calendar-nav">
+                            <button id="prev-month" class="btn btn-outline"><i class="fas fa-chevron-left"></i></button>
+                            <h3 id="current-month">June 2023</h3>
+                            <button id="next-month" class="btn btn-outline"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <button id="jump-to-today" class="btn btn-outline btn-sm"><i class="fas fa-calendar-day"></i> Today</button>
                     </div>
                     <div class="calendar-grid" id="calendar-grid">
                         <!-- Calendar will be generated by JavaScript -->
@@ -140,7 +140,39 @@
         </main>
     </div>
     
+    <!-- Toast Notification System -->
+    <div id="toast-container" class="toast-container"></div>
+    
+    <!-- SMS Modal -->
+    <div id="sms-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Send SMS to Patient</h3>
+                <button type="button" class="close-btn" id="close-sms-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="sms-form">
+                    <div class="form-group">
+                        <label for="sms-to">To:</label>
+                        <input type="text" id="sms-to" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="sms-message">Message:</label>
+                        <textarea id="sms-message" class="form-control" rows="5" required></textarea>
+                    </div>
+                    <input type="hidden" id="sms-patient-id">
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Send SMS</button>
+                        <button type="button" class="btn btn-outline" id="cancel-sms">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
     <script src="auth.js"></script>
+    <script src="sms-config.js"></script>
+    <script src="reminders.js"></script>
     <script src="appointments.js"></script>
 </body>
 </html>
