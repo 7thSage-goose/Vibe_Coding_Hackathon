@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthTrack Pro | Smart Patient Follow-Up System</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthTrack Pro | Doctor Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
@@ -15,21 +14,22 @@
             <span>HealthTrack Pro</span>
         </div>
         <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
             <a href="#" id="login-btn" class="btn">Doctor Login</a>
         </div>
     </nav>
     
     <section class="hero">
+    <!-- Background Image (now in HTML instead of CSS) -->
+    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
+         alt="Doctor working" 
+         class="hero-background">
         <div class="hero-content">
-            <h1>Never Miss a Patient Follow-Up Again</h1>
-            <p>Automated appointment reminders, patient prioritization, and seamless communication for healthcare professionals.</p>
-            <a href="#" id="hero-login-btn" class="btn">Secure Doctor Portal</a>
+            <h1>Doctor Portal Login</h1>
+            <p>Secure access to patient management and appointment scheduling</p>
+            <a href="#" id="hero-login-btn" class="btn">Access Your Dashboard</a>
         </div>
     </section>
-    
+
     <section class="features" id="features">
         <h2 class="section-title">Key Features</h2>
         <div class="features-grid">
@@ -73,17 +73,15 @@
         </div>
     </div>
     
-    <footer id="contact">
+    <footer>
         <div class="footer-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
-            <a href="#">Support</a>
         </div>
         <p>© 2023 HealthTrack Pro. All rights reserved.</p>
     </footer>
     
-    <script src="auth.js"></script>    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="auth.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
