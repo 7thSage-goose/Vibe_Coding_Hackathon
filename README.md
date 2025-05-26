@@ -37,9 +37,6 @@ Via SMS, WhatsApp, and other regional channels.
 #### Github copilot
 #### Coder by Kodu.ai(VS Code extension)
 
-## Live Demo:
-### Click Here:  https://the7thsage376.github.io/Vibe_Coding_Hackathon/
-
 
 ## 📲Contact
 For feedback, collaboration, or investment contact:
