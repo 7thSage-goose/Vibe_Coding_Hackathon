@@ -38,7 +38,7 @@ Via SMS, WhatsApp, and other regional channels.
 #### Coder by Kodu.ai(VS Code extension)
 
 ## Live Demo:
-### Click Here:
+### Click Here:  https://the7thsage376.github.io/Vibe_Coding_Hackathon/
 
 
 ## 📲Contact
