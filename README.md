@@ -42,9 +42,9 @@ Via SMS, WhatsApp, and other regional channels.
 ## Contact
 For feedback, collaboration, or investment contact:
 
-Anele Mucavele: yolandaanele81@gmail.com 
-Thandolwethu Ndhlovu: thandolwethundhlovu8@gmail.com
-Bongane Letsoenyo: bonganeclen@gmail.com
-Lerato Moloi: moloil405@gmail.com
+#### Anele Mucavele: yolandaanele81@gmail.com 
+#### Thandolwethu Ndhlovu: thandolwethundhlovu8@gmail.com
+#### Bongane Letsoenyo: bonganeclen@gmail.com
+#### Lerato Moloi: moloil405@gmail.com
 
-**Click Here**:https://the7thsage376.github.io/Vibe_Coding_Hackathon/
+#### **Click Here**:https://the7thsage376.github.io/Vibe_Coding_Hackathon/
