@@ -30,8 +30,6 @@ Via SMS, WhatsApp, and other regional channels.
 ## Tech Stack
 
 #### Frontend: HTML5, CSS3, JavaScript and Bootstrap
-#### Backend: Node.js 
-#### Database: MongoDB 
 #### Messaging Integration: Twilio (SMS), WhatsApp API
 
 ## AI Tools
